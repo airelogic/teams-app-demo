@@ -1,0 +1,2 @@
+# Auto detect text files and set their lind ending to LF
+* text=auto eol=lf

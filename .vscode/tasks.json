@@ -15,6 +15,22 @@
       "isBackground": true,
       "problemMatcher": [],
       "group": "build"
+    },
+    {
+      "label": "Run NGrok",
+      "type": "shell",
+      "command": "npm run ngrok",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Make Manifest",
+      "type": "shell",
+      "command": "./scripts/make-manifest.ps1",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
     }
   ]
 }
