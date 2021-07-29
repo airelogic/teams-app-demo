@@ -28,7 +28,10 @@ export default function App(): JSX.Element {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Hello World</p>
+        <p>
+          No configuration is required for this app - please press Save to
+          continue
+        </p>
       </header>
     </div>
   );
