@@ -32,6 +32,12 @@ stages:
             displayName: "Publish manifest"
             artifact: Manifest
 
+          - bash: |
+              git config --global user.email 'bot@airelogic.com'
+              git config --global user.name 'GitHub Pages Deploy Bot'
+            displayName: Configure git
+            condition: and(succeeded(), eq(variables.isMain, true))
+
           - pwsh: npm run deploy
             displayName: "Deploy to GitHub Pages"
             condition: and(succeeded(), eq(variables.isMain, true))
