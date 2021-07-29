@@ -43,6 +43,6 @@ stages:
             displayName: Configure git
             condition: and(succeeded(), eq(variables.isMain, true))
 
-          - pwsh: npm run deploy -- -r https://$(GITHUB_WRITE_TOKEN)@github.com/teams-app-demo.git
+          - pwsh: npm run deploy -- -r https://$(GITHUB_WRITE_TOKEN)@github.com/airelogic/teams-app-demo.git
             displayName: "Deploy to GitHub Pages"
             condition: and(succeeded(), eq(variables.isMain, true))
