@@ -1,5 +1,7 @@
 variables:
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+  - group: GitHub
+  - name: isMain
+    value: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 
 trigger:
   branches:
@@ -41,6 +43,6 @@ stages:
             displayName: Configure git
             condition: and(succeeded(), eq(variables.isMain, true))
 
-          - pwsh: npm run deploy
+          - pwsh: npm run deploy -- -r https://$(GITHUB_WRITE_TOKEN)@github.com/teams-app-demo.git
             displayName: "Deploy to GitHub Pages"
             condition: and(succeeded(), eq(variables.isMain, true))
