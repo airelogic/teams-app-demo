@@ -1,1 +1,0 @@
-import{R as e,a as t}from"./vendor.a6c880e2.js";function l(){return e.createElement("div",{className:"App"},e.createElement("header",{className:"App-header"},e.createElement("p",null,"Hello World")))}t.render(e.createElement(e.StrictMode,null,e.createElement(l,null)),document.getElementById("root"));
