@@ -7,7 +7,7 @@ $ErrorActionPreference = "Stop"
 
 Push-Location "$PSScriptRoot/.."
 try {
-    $output = Resolve-Path "artifacts/manifest.zip"
+    $output = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("artifacts/manifest.zip")
     New-Item -ItemType Directory -Force artifacts | Out-Null
     Compress-Archive -Path "eng/manifest/*" -DestinationPath $output -Force
     Write-Host "Manifest created at $output"
