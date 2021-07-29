@@ -1,0 +1,37 @@
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: "ubuntu-20.04"
+
+stages:
+  - stage: build
+    jobs:
+      - job: Build
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "14.x"
+            displayName: "Install Node.js"
+
+          - pwsh: npm install
+            displayName: "npm install"
+
+          - pwsh: npm build
+            displayName: "npm build"
+
+          - pwsh: ./scripts/make-manifest.ps1
+            displayName: "Make manifest"
+
+          - publish: $(Build.SourcesDirectory)/artifacts/manifest.zip
+            displayName: "Publish manifest"
+            artifact: Manifest
+
+          - pwsh: npm run deploy
+            displayName: "Deploy to GitHub Pages"
+            condition: and(succeeded(), eq(variables.isMain, true))
