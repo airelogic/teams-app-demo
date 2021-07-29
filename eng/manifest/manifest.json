@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.9",
+  "id": "0bbe1650-ef93-11eb-8194-9b09959fff10",
+  "version": "1.0.18",
+  "packageName": "airelogicdemo",
+  "developer": {
+    "name": "AireLogic",
+    "websiteUrl": "https://gm-staging.forms4health.com",
+    "privacyUrl": "https://gm-staging.forms4health.com",
+    "termsOfUseUrl": "https://gm-staging.forms4health.com"
+  },
+  "name": {
+    "short": "GM Consultation Note",
+    "full": "GM Consultation Note"
+  },
+  "description": {
+    "short": "GM Consultation Note form",
+    "full": "A forms4health general purpose consultation note form that can be used by a wide variety of clinicians to record information about a patient encounter or consultation."
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#251430",
+  "configurableTabs": [],
+  "staticTabs": [
+    {
+      "entityId": "f4h",
+      "name": "GM Consultation Note",
+      "contentUrl": "https://gm-staging.forms4health.com/gm/singlepass/consults-demo",
+      "scopes": ["personal"],
+      "context": ["channelTab", "personalTab"]
+    }
+  ],
+  "bots": [],
+  "connectors": [],
+  "composeExtensions": [],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["gm-staging.forms4health.com"],
+  "showLoadingIndicator": false
+}
