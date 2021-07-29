@@ -22,7 +22,7 @@ stages:
           - pwsh: npm install
             displayName: "npm install"
 
-          - pwsh: npm build
+          - pwsh: npm run build
             displayName: "npm build"
 
           - pwsh: ./scripts/make-manifest.ps1
