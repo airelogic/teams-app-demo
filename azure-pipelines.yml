@@ -30,9 +30,9 @@ stages:
           - pwsh: ./scripts/make-manifest.ps1
             displayName: "Make manifest"
 
-          - publish: $(Build.SourcesDirectory)/artifacts/manifests/*.zip
+          - publish: $(Build.SourcesDirectory)/artifacts/manifests
             displayName: "Publish manifests"
-            artifact: Manifest
+            artifact: Manifests
 
           - bash: |
               git config --global user.email 'bot@airelogic.com'
