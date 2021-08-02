@@ -30,8 +30,8 @@ stages:
           - pwsh: ./scripts/make-manifest.ps1
             displayName: "Make manifest"
 
-          - publish: $(Build.SourcesDirectory)/artifacts/manifest.zip
-            displayName: "Publish manifest"
+          - publish: $(Build.SourcesDirectory)/artifacts/manifests/*.zip
+            displayName: "Publish manifests"
             artifact: Manifest
 
           - bash: |
