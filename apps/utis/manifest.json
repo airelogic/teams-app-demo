@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
   "manifestVersion": "1.9",
-  "id": "0bbe1650-ef93-11eb-8194-9b09959fff10",
-  "version": "1.0.20",
+  "id": "c4874178-9149-4f91-8336-6780f4704af5",
+  "version": "1.0.21",
   "packageName": "airelogicdemo",
   "developer": {
     "name": "AireLogic",
