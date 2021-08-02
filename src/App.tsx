@@ -1,38 +1,25 @@
-import React, { useEffect } from "react";
-import * as microsoftTeams from "@microsoft/teams-js";
-import { useTeams } from "./teams";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NoConfiguration from "./NoConfiguration";
 
-export default function App(): JSX.Element {
-  const [{ context }] = useTeams();
-
-  const onSaveHandler = (saveEvent: microsoftTeams.settings.SaveEvent) => {
-    const url =
-      "https://gm-staging.forms4health.com/gm/singlepass/consults-demo";
-
-    microsoftTeams.settings.setSettings({
-      contentUrl: url,
-      websiteUrl: url,
-      suggestedDisplayName: "GM Consultation Note",
-    });
-    saveEvent.notifySuccess();
-  };
-
-  useEffect(() => {
-    if (context) {
-      microsoftTeams.settings.registerOnSaveHandler(onSaveHandler);
-      microsoftTeams.settings.setValidityState(true);
-      microsoftTeams.appInitialization.notifySuccess();
-    }
-  }, [context]);
-
+export default function (): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          No configuration is required for this app - please press Save to
-          continue
-        </p>
-      </header>
-    </div>
+    <Router basename="/teams-app-demo">
+      <Switch>
+        <Route exact path="/">
+          <NoConfiguration
+            url="https://gm-staging.forms4health.com/gm/singlepass/consults-demo"
+            displayName="Consultation Note"
+          />
+        </Route>
+        <Route path="/consultation-note/config">
+          <NoConfiguration
+            url="https://gm-staging.forms4health.com/gm/singlepass/consults-demo"
+            displayName="Consultation Note"
+          />
+        </Route>
+        <Route path="/">Page not found</Route>
+      </Switch>
+    </Router>
   );
 }

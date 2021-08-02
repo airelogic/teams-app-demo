@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Teams app demo</title>
+    <script type="text/javascript">
+      // This script takes the current url and redirects to the index.html with a "spaUrl" parameter, which
+      // is then used by the index to display the correct page.
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (it is currently > 512 bytes)
+
+      (function () {
+        var pathSegmentsToKeep = 1;
+
+        var l = window.location;
+
+        var newPath = l.pathname
+          .split("/")
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join("/");
+        var returnUrl = l.pathname + l.search + l.hash;
+
+        window.location.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            newPath +
+            "/?spaUrl=" +
+            encodeURIComponent(returnUrl)
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

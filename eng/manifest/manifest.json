@@ -25,7 +25,7 @@
   "accentColor": "#251430",
   "configurableTabs": [
     {
-      "configurationUrl": "https://airelogic.github.io/teams-app-demo",
+      "configurationUrl": "https://airelogic.github.io/teams-app-demo/consultation-note/config",
       "canUpdateConfiguration": true,
       "scopes": ["team"],
       "context": [

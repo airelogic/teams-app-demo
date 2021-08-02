@@ -31,6 +31,14 @@
       "isBackground": true,
       "problemMatcher": [],
       "group": "build"
+    },
+    {
+      "label": "Build javascript",
+      "type": "shell",
+      "command": "npm run build",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
     }
   ]
 }
