@@ -11,12 +11,12 @@
     "termsOfUseUrl": "https://gm-staging.forms4health.com"
   },
   "name": {
-    "short": "Consultation Note",
-    "full": "Consultation Note"
+    "short": "Urinary Tract Infection",
+    "full": "Urinary Tract Infection"
   },
   "description": {
-    "short": "Consultation Note form",
-    "full": "A forms4health general purpose consultation note form that can be used by a wide variety of clinicians to record information about a patient encounter or consultation."
+    "short": "Urinary Tract Infection",
+    "full": "A forms4health general purpose urinary tract infection (UTI) form that can be used by a wide variety of clinicians to record information about a patient encounter or consultation."
   },
   "icons": {
     "outline": "icon-outline.png",
@@ -25,7 +25,7 @@
   "accentColor": "#251430",
   "configurableTabs": [
     {
-      "configurationUrl": "https://airelogic.github.io/teams-app-demo/consultation-note/config",
+      "configurationUrl": "https://airelogic.github.io/teams-app-demo/utis/config",
       "canUpdateConfiguration": true,
       "scopes": ["team"],
       "context": [
